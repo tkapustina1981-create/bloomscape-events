@@ -973,6 +973,63 @@
       text-align: center !important;
     }
   }
+  
+  /* HAMBURGER MENU */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+    z-index: 200;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--charcoal);
+    transition: all 0.3s;
+  }
+  nav.scrolled .hamburger span { background: var(--charcoal); }
+  nav:not(.scrolled) .hamburger span { background: rgba(255,255,255,0.9); }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--ivory);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition: color 0.3s;
+  }
+  .mobile-menu a:hover { color: var(--terra); }
+  .mobile-menu-close {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--taupe);
+    font-family: 'Jost', sans-serif;
+  }
+  @media (max-width: 768px) {
+    .hamburger { display: flex; }
+    .nav-links { display: none !important; }
+  }
   </style>
 </head>
 <body>
@@ -985,8 +1042,21 @@
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a>
+  <button class="hamburger" onclick="openMobileMenu()" aria-label="Menu"><span></span><span></span><span></span></button></li>
   </ul>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+  <a href="#why" onclick="closeMobileMenu()">About</a>
+  <a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="categories/weddings.html" onclick="closeMobileMenu()">Weddings</a>
+  <a href="categories/baby-showers.html" onclick="closeMobileMenu()">Baby Showers</a>
+  <a href="categories/proposals.html" onclick="closeMobileMenu()">Proposals</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
 </nav>
 
 <!-- Falling petals -->
@@ -1433,6 +1503,12 @@
   // Falling petals
   const container = document.getElementById('petals-container');
   
+</script>
+
+<script>
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMobileMenu(); });
 </script>
 </body>
 </html>
