@@ -112,8 +112,10 @@
 
   .hero-content {
     position: relative; z-index: 2;
-    padding: 0 3rem 5rem;
+    padding: 0 2rem 5rem;
     max-width: 800px;
+    box-sizing: border-box;
+    width: 100%;
   }
   .hero-eyebrow {
     font-size: 0.7rem;
@@ -990,6 +992,17 @@
       font-size: 0.88rem !important;
     }
   }
+  
+  @media (max-width: 480px) {
+    .hero-content {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+    .hero-title {
+      font-size: 2rem;
+      word-break: break-word;
+    }
+  }
   </style>
 </head>
 <body>
@@ -1257,6 +1270,7 @@
         <p>Tell us about your vision. We'll take care of the rest.</p>
         <div class="contact-info">
           <span class="contact-info-item">Charlotte, NC</span>
+          <span class="contact-info-item">🌐 English · Русский · 中文</span>
           <span class="contact-info-item">@bloomscape_events</span>
           <span class="contact-info-item">hello@bloomscapeevents.com</span>
         </div>
@@ -1409,8 +1423,8 @@
   </div>
 </footer>
 <div class="footer-bottom">
-  <span>© 2026 BloomScape Events & Decor. Charlotte, NC.</span>
-  <span>Designed with intention.</span>
+  <span>© 2026 BloomScape Events LLC · Charlotte, NC</span>
+  <span>English · Русский · 中文</span>
 </div>
 
 <script>
