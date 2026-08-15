@@ -1355,10 +1355,16 @@
         </div>
         <div class="form-group full">
           <label>Preferred Contact Method</label>
-          <div class="radio-group">
-            <label class="radio-label"><input type="radio" name="contact" value="email"> Email</label>
-            <label class="radio-label"><input type="radio" name="contact" value="phone"> Phone</label>
-            <label class="radio-label"><input type="radio" name="contact" value="text"> Text Message</label>
+          <div class="radio-group" style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.5rem;">
+            <label style="display:flex;align-items:center;gap:0.5rem;cursor:pointer;font-size:0.85rem;padding:0.6rem 1rem;border:1px solid var(--sand);background:var(--sand);">
+              <input type="radio" name="contact" value="email" style="width:16px;height:16px;accent-color:var(--terra);cursor:pointer;"> Email
+            </label>
+            <label style="display:flex;align-items:center;gap:0.5rem;cursor:pointer;font-size:0.85rem;padding:0.6rem 1rem;border:1px solid var(--sand);background:var(--sand);">
+              <input type="radio" name="contact" value="phone" style="width:16px;height:16px;accent-color:var(--terra);cursor:pointer;"> Phone
+            </label>
+            <label style="display:flex;align-items:center;gap:0.5rem;cursor:pointer;font-size:0.85rem;padding:0.6rem 1rem;border:1px solid var(--sand);background:var(--sand);">
+              <input type="radio" name="contact" value="text" style="width:16px;height:16px;accent-color:var(--terra);cursor:pointer;"> Text
+            </label>
           </div>
         </div>
         <button type="submit" class="btn-submit">Let's Create Something Beautiful</button>
