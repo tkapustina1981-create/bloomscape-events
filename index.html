@@ -974,6 +974,27 @@
       text-align: center !important;
     }
   }
+  
+  .btn-inquire {
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--terra);
+    padding: 1.1rem 2.5rem;
+    text-decoration: none;
+    border: none;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 24px rgba(201,121,94,0.45);
+  }
+  .btn-inquire:hover {
+    background: #b5654a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(201,121,94,0.55);
+  }
   </style>
 </head>
 <body>
@@ -1007,8 +1028,7 @@
     <p class="hero-sub" style="font-size:1rem;color:rgba(253,250,247,0.85);margin-bottom:0.5rem;">Wedding &amp; Event Design in Charlotte, NC</p>
     <p class="hero-sub" style="font-size:0.78rem;color:rgba(253,250,247,0.5);margin-bottom:2.5rem;">Serving Charlotte, Lake Norman, Waxhaw, Fort Mill &amp; surrounding areas.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Book Your Consultation</a>
-      <a href="#portfolio" class="btn-ghost">See Our Work</a>
+      <a href="#contact" class="btn-inquire">Inquire for Your Date →</a>
     </div>
   </div>
   <p class="hero-booking-note">Now Booking Fall &amp; Holiday 2026</p>
@@ -1436,6 +1456,53 @@
   // Falling petals
   const container = document.getElementById('petals-container');
   
+</script>
+
+<a href="#contact" class="btn-floating" id="floatingBtn">
+  Inquire for Your Date →
+</a>
+<style>
+  .btn-floating {
+    position: fixed;
+    bottom: 2rem;
+    right: 1.5rem;
+    z-index: 99;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--terra);
+    padding: 0.85rem 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(201,121,94,0.5);
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  .btn-floating.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (max-width: 768px) {
+    .btn-floating {
+      bottom: 1rem;
+      right: 1rem;
+      left: 1rem;
+      text-align: center;
+    }
+  }
+</style>
+<script>
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('floatingBtn');
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
 </script>
 </body>
 </html>
