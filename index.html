@@ -1321,7 +1321,21 @@
         </div>
         <div class="form-group">
           <label>Event Date</label>
-          <input type="text" placeholder="MM/DD/YYYY" pattern="\d{2}/\d{2}/\d{4}" maxlength="10" oninput="this.value=this.value.replace(/[^0-9/]/g,'').replace(/(\d{2})(\d)/,'$1/$2').replace(/(\d{2}\/\d{2})(\d)/,'$1/$2')" inputmode="numeric">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;">
+              <select name="event_month" style="background:var(--sand);border:1px solid transparent;padding:0.9rem 0.5rem;font-family:Jost,sans-serif;font-size:0.85rem;color:var(--charcoal);border-radius:0;cursor:pointer;">
+                <option value="" disabled selected>Month</option>
+                <option>January</option><option>February</option><option>March</option>
+                <option>April</option><option>May</option><option>June</option>
+                <option>July</option><option>August</option><option>September</option>
+                <option>October</option><option>November</option><option>December</option>
+              </select>
+              <select name="event_day" style="background:var(--sand);border:1px solid transparent;padding:0.9rem 0.5rem;font-family:Jost,sans-serif;font-size:0.85rem;color:var(--charcoal);border-radius:0;cursor:pointer;">
+                <option value="" disabled selected>Day</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option></select>
+              <select name="event_year" style="background:var(--sand);border:1px solid transparent;padding:0.9rem 0.5rem;font-family:Jost,sans-serif;font-size:0.85rem;color:var(--charcoal);border-radius:0;cursor:pointer;">
+                <option value="" disabled selected>Year</option>
+                <option>2025</option><option>2026</option><option>2027</option><option>2028</option>
+              </select>
+            </div>
         </div>
         <div class="form-group">
           <label>Venue / City</label>
