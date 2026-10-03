@@ -27,6 +27,11 @@ fbq('track', 'PageView');</script>
 html{scroll-behavior:smooth;}
 #check-date{scroll-margin-top:80px;}
 .hero-note{font-size:.78rem;letter-spacing:.06em;color:var(--olive);margin-top:1.2rem;}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;max-width:900px;margin:2rem auto 0;}
+.gallery figure{margin:0;}
+.gallery img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:8px;display:block;}
+.gallery figcaption{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-align:center;opacity:.75;margin-top:.7rem;}
+@media (max-width:560px){.gallery{grid-template-columns:1fr;}}
 /* reviews */
 .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1000px;margin:2rem auto 0;}
 .review{background:var(--white);border:1px solid var(--sand);border-radius:8px;padding:2rem;text-align:center;}
@@ -138,6 +143,27 @@ html{scroll-behavior:smooth;}
       <div class="card"><h3>Faster Planning Timeline</h3><p>Micro weddings often come together closer to the date. We can turn around a full concept quickly when your timeline is tight.</p></div>
       <div class="card"><h3>Backyard &amp; Small-Venue Friendly</h3><p>Designed to work beautifully in intimate settings &mdash; a backyard, a private home, a small private dining room &mdash; not just traditional wedding venues.</p></div>
       <div class="card"><h3>Every Detail, Considered</h3><p>The same sculptural, editorial signature look as our full-scale weddings, scaled thoughtfully to your guest count.</p></div>
+    </div>
+  </div>
+</section>
+<section id="gallery" style="padding-top:3rem;padding-bottom:3rem;">
+  <div class="wrap">
+    <h2>Recent micro wedding details</h2>
+    <div class="gallery">
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="/assets/micro-wedding-arch-640.webp 640w, /assets/micro-wedding-arch.webp 1000w" sizes="(max-width:560px) 100vw, 450px">
+          <img src="/assets/micro-wedding-arch.jpg" width="1000" height="1333" loading="lazy" decoding="async" alt="Ceremony arch with white drapery and lace, white floral clusters, set beside a lake">
+        </picture>
+        <figcaption>Lakeside ceremony arch</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="/assets/micro-wedding-seating-640.webp 640w, /assets/micro-wedding-seating.webp 1000w" sizes="(max-width:560px) 100vw, 450px">
+          <img src="/assets/micro-wedding-seating.jpg" width="1000" height="1502" loading="lazy" decoding="async" alt="Welcome and seating plan sign with a fresh floral arrangement on olive velvet drape">
+        </picture>
+        <figcaption>Welcome sign &amp; seating plan</figcaption>
+      </figure>
     </div>
   </div>
 </section>
