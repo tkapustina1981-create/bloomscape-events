@@ -219,13 +219,15 @@ html{scroll-behavior:smooth;}
 <section id="check-date" style="background:var(--sand);">
   <div class="wrap lead-wrap" style="text-align:center;">
     <h2>Check my date</h2>
-    <p style="opacity:.85;">Five quick details. We&rsquo;ll check availability and get back to you.</p>
+    <p style="opacity:.85;">A few quick details. We&rsquo;ll check availability and get back to you.</p>
     <form class="lead-form" action="https://formspree.io/f/moeanwgk" method="POST">
       <input type="hidden" name="_subject" value="Micro wedding inquiry - landing page">
       <input type="hidden" name="_next" value="https://bloomscapeevents.com/thank-you.html">
       <input type="hidden" name="event_type" value="Micro Wedding">
       <div><label for="f-name">Name</label><input id="f-name" type="text" name="name" autocomplete="name" required></div>
-      <div><label for="f-contact">Phone or email</label><input id="f-contact" type="text" name="contact" autocomplete="email" inputmode="email" placeholder="(704) 000-0000 or you@email.com" required></div>
+      <div><label for="f-phone">Phone</label><input id="f-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="(704) 000-0000"></div>
+      <div><label for="f-email">Email</label><input id="f-email" type="email" name="email" autocomplete="email" placeholder="you@email.com"></div>
+      <p class="form-note" style="margin:-.4rem 0 0;text-align:left;">Phone or email &mdash; one is enough.</p>
       <div><label for="f-date">Wedding date</label><input id="f-date" type="date" name="event_date" required></div>
       <div><label for="f-venue">Venue or city</label><input id="f-venue" type="text" name="venue" placeholder="Venue name or city" required></div>
       <div><label for="f-guests">Number of guests</label>
@@ -281,6 +283,11 @@ html{scroll-behavior:smooth;}
 (function(){
   var d=document.getElementById('f-date');
   if(d){var t=new Date();t.setMinutes(t.getMinutes()-t.getTimezoneOffset());d.min=t.toISOString().slice(0,10);}
+  var ph=document.getElementById('f-phone'),em=document.getElementById('f-email');
+  if(ph&&em){
+    var chk=function(){em.setCustomValidity((ph.value.trim()||em.value.trim())?'':'Please add a phone number or an email.');};
+    ph.addEventListener('input',chk);em.addEventListener('input',chk);chk();
+  }
   var bar=document.getElementById('stickyCta'),form=document.getElementById('check-date');
   if(bar&&form&&'IntersectionObserver' in window){
     new IntersectionObserver(function(e){bar.classList.toggle('hide',e[0].isIntersecting);},{threshold:0.35}).observe(form);
