@@ -13,6 +13,8 @@ fbq('track', 'PageView');</script>
 <title>Micro Wedding Decor Charlotte, NC | BloomScape Events</title>
 <meta name="description" content="Statement decor for micro weddings and intimate ceremonies in Charlotte, NC. Full styling for celebrations under 50 guests, from BloomScape Events.">
 <link rel="canonical" href="https://bloomscapeevents.com/micro-wedding-decor-charlotte.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
@@ -21,6 +23,53 @@ fbq('track', 'PageView');</script>
 .featured-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.1;margin-bottom:.8rem;color:var(--ivory);}
 .featured-location{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--taupe);}
 @media (max-width:760px){.featured{grid-template-columns:1fr !important;min-height:auto !important;}.featured > div{min-height:340px !important;}}
+
+html{scroll-behavior:smooth;}
+#check-date{scroll-margin-top:80px;}
+.hero-note{font-size:.78rem;letter-spacing:.06em;color:var(--olive);margin-top:1.2rem;}
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1000px;margin:2rem auto 0;}
+.review{background:var(--white);border:1px solid var(--sand);border-radius:8px;padding:2rem;text-align:center;}
+.review p.q{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;line-height:1.6;margin-bottom:1rem;}
+.review p.who{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);}
+/* packages */
+.pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1000px;margin:2rem auto 0;align-items:start;}
+.pkg{background:var(--white);border:1px solid var(--sand);border-radius:8px;padding:2rem;}
+.pkg.feat{border-color:var(--terra);}
+.pkg-name{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);}
+.pkg-price{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:500;line-height:1.1;margin:.3rem 0 .1rem;}
+.pkg-guests{font-size:.85rem;opacity:.75;margin-bottom:1.2rem;}
+.pkg h3{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin:1.4rem 0 .6rem;color:var(--charcoal);}
+.pkg ul{list-style:none;}
+.pkg li{position:relative;padding:.45rem 0 .45rem 1.6rem;font-size:.92rem;border-bottom:1px solid var(--sand);}
+.pkg li:last-child{border-bottom:0;}
+.pkg li strong{font-weight:500;}
+.pkg ul.yes li::before{content:"\2713";position:absolute;left:0;color:var(--olive);font-weight:500;}
+.pkg ul.no li{opacity:.65;}
+.pkg ul.no li::before{content:"\2013";position:absolute;left:.2rem;}
+.pkg-foot{font-size:.82rem;opacity:.7;margin-top:1rem;}
+.good{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;max-width:1000px;margin:2.5rem auto 0;}
+.good div{border-top:2px solid var(--sand);padding-top:.9rem;}
+.good h4{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.4rem;}
+.good p{font-size:.9rem;opacity:.85;}
+/* form */
+.lead-wrap{max-width:560px;margin:0 auto;}
+.lead-form{display:grid;gap:1rem;margin-top:1.8rem;text-align:left;}
+.lead-form label{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35rem;}
+.lead-form input,.lead-form select{width:100%;background:var(--white);border:1px solid var(--taupe);border-radius:2px;padding:.95rem 1rem;font-family:'Jost',sans-serif;font-size:1rem;color:var(--charcoal);}
+.lead-form input:focus,.lead-form select:focus{outline:2px solid var(--terra);outline-offset:1px;}
+.lead-form button{background:var(--terra);color:var(--white);border:0;border-radius:2px;padding:1.05rem 2rem;font-family:'Jost',sans-serif;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:.4rem;}
+.lead-form button:hover{background:var(--charcoal);}
+.form-note{font-size:.8rem;opacity:.7;text-align:center;margin-top:.8rem;}
+/* sticky mobile CTA */
+.sticky-cta{display:none;}
+@media (max-width:760px){
+  body{padding-bottom:5.2rem;}
+  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--terra);color:var(--white);text-align:center;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;padding:1.05rem 1rem calc(1.05rem + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 16px rgba(0,0,0,.15);transition:transform .25s;}
+  .sticky-cta.hide{transform:translateY(110%);}
+  .nav-links{display:none;}
+  .hero-simple{padding-top:3.5rem;}
+}
 </style>
 </head>
 <body>
@@ -31,19 +80,38 @@ fbq('track', 'PageView');</script>
     <li><a href="/index.html#portfolio">Portfolio</a></li>
     <li><a href="/index.html#investment">Pricing</a></li>
     <li><a href="/blog/">Blog</a></li>
-    <li><a href="/index.html#contact" class="nav-cta">Book Now</a></li>
+    <li><a href="#check-date" class="nav-cta">Check my date</a></li>
   </ul>
 </nav>
 <div class="hero-simple">
   <p class="eyebrow">Micro Weddings &middot; Charlotte, NC</p>
   <h1>Big Celebration Energy, Small Guest List</h1>
   <p class="sub">Statement-making decor for intimate ceremonies &mdash; Charlotte's micro weddings and elopements deserve the same sculptural, photo-ready design as any 200-guest affair, scaled to fit your day.</p>
-  <a href="/index.html#contact" class="btn-primary">Check Your Date</a>
+  <a href="#check-date" class="btn-primary">Check my date</a>
+  <p class="hero-note">Now booking Fall &amp; Holiday 2026 &middot; Weekend dates are limited</p>
 </div>
+<section style="padding:3.5rem 1.5rem;">
+  <div class="wrap">
+    <h2>Kind words</h2>
+    <div class="reviews">
+      <div class="review">
+        <p class="q">&ldquo;The design team brought our modern boho vision to life perfectly. I was especially amazed by the huge flowers that actually opened up &mdash; they looked absolutely stunning and created such a beautiful, unique atmosphere. Every detail was explained to me, so the whole process felt completely stress-free, and the price was very reasonable for the quality and creativity we got.&rdquo;</p>
+        <p class="who">Alexandra &mdash; Baby Shower</p>
+      </div>
+      <div class="review">
+        <p class="q">&ldquo;We had a small, intimate wedding surrounded by our closest family and friends, but every little detail was thoughtfully planned and meaningful. The entire celebration beautifully reflected the story of our young family, making the day feel truly personal and unique. Everything was so warm, heartfelt, and genuine, exactly the way we wanted it to be. It was a beautiful celebration filled with love, emotion, and special moments that we will cherish forever.&rdquo;</p>
+        <p class="who">Susan Baker &mdash; Wedding</p>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="featured" style="display:grid;grid-template-columns:1fr 1fr;min-height:70vh;">
   <div style="position:relative;overflow:hidden;min-height:400px;">
-    <img src="/assets/micro-wedding-garden-ceremony.jpg" alt="Intimate garden ceremony surrounded by lush floral borders"
-      style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+    <picture>
+      <source type="image/webp" srcset="/assets/micro-wedding-garden-ceremony-640.webp 640w, /assets/micro-wedding-garden-ceremony.webp 1000w" sizes="(max-width:760px) 100vw, 50vw">
+      <img src="/assets/micro-wedding-garden-ceremony.jpg" width="1000" height="1249" loading="lazy" decoding="async" alt="Intimate garden ceremony surrounded by lush floral borders"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+    </picture>
   </div>
   <div class="featured-text">
     <p class="featured-label">Intimate by Design</p>
@@ -73,19 +141,79 @@ fbq('track', 'PageView');</script>
     </div>
   </div>
 </section>
-<section>
+<section id="packages">
   <div class="wrap">
     <h2>Micro wedding packages</h2>
     <p class="lead">Two ways to style an intimate celebration, both built for guest counts around 20.</p>
-    <div class="grid-cards">
-      <div class="blog-card">
-        <img src="/assets/micro-wedding-1999.jpg" alt="BloomScape Micro Wedding Styling Package, $1,999 &mdash; design consultation, ceremony focal design, reception tablescape, welcome sign" style="width:100%;display:block;">
+    <div class="pkg-grid">
+      <div class="pkg">
+        <p class="pkg-name">Micro Wedding Styling Package</p>
+        <p class="pkg-price">$1,999</p>
+        <p class="pkg-guests">Styled for up to 20 guests</p>
+        <h3>What&rsquo;s included</h3>
+        <ul class="yes">
+          <li><strong>Design consultation</strong> &mdash; custom color palette and concept direction</li>
+          <li><strong>Ceremony focal design</strong> &mdash; one statement floral arrangement or floral installation</li>
+          <li><strong>Reception tablescape</strong> &mdash; styled tables for up to 20 guests with centerpieces, candles and curated details</li>
+          <li><strong>Welcome sign</strong> &mdash; custom sign with a floral accent</li>
+          <li><strong>Delivery &amp; professional setup</strong></li>
+        </ul>
+        <h3>Added in Full Bloom</h3>
+        <ul class="no">
+          <li>Floral arch with seasonal flowers and greenery</li>
+          <li>Tables &amp; chairs, premium linens</li>
+          <li>Full table settings: plates, glassware, flatware, napkins</li>
+          <li>Styled cake table</li>
+        </ul>
       </div>
-      <div class="blog-card">
-        <img src="/assets/full-bloom-3500.jpg" alt="BloomScape Full Bloom package, $3,500 for up to 20 guests &mdash; ceremony floral arch, full reception styling, cake table, welcome sign" style="width:100%;display:block;">
+      <div class="pkg feat">
+        <p class="pkg-name">Full Bloom</p>
+        <p class="pkg-price">$3,500</p>
+        <p class="pkg-guests">A complete styling experience for up to 20 guests</p>
+        <h3>What&rsquo;s included</h3>
+        <ul class="yes">
+          <li><strong>Design consultation</strong> &mdash; custom color palette and concept direction</li>
+          <li><strong>Ceremony floral design</strong> &mdash; one statement floral arch with seasonal flowers and greenery</li>
+          <li><strong>Full reception for up to 20 guests</strong> &mdash; tables &amp; chairs, premium linens, table settings (plates, glassware, flatware, napkins), centerpieces &amp; candles, full styling and details</li>
+          <li><strong>Cake table</strong> &mdash; styled with linens, florals and candles</li>
+          <li><strong>Welcome sign</strong> &mdash; custom sign with a floral accent</li>
+          <li><strong>Delivery, professional setup &amp; breakdown</strong></li>
+        </ul>
+        <p class="pkg-foot">Venue, catering and the cake itself are arranged separately.</p>
       </div>
     </div>
-    <p style="text-align:center;margin-top:2rem;"><a href="/index.html#contact" class="btn-primary">Check Your Date</a></p>
+    <div class="good">
+      <div><h4>Setup &amp; breakdown</h4><p>Delivery and professional setup are included in both packages. Breakdown is included in Full Bloom.</p></div>
+      <div><h4>Reserving your date</h4><p>A signed agreement and a non-refundable retainer reserve your date.</p></div>
+      <div><h4>Cancellation</h4><p>Cancellation and rescheduling terms are set out in your signed agreement.</p></div>
+      <div><h4>When to book</h4><p>We recommend 2&ndash;6 months out. Shorter timelines are often possible.</p></div>
+    </div>
+  </div>
+</section>
+<section id="check-date" style="background:var(--sand);">
+  <div class="wrap lead-wrap" style="text-align:center;">
+    <h2>Check my date</h2>
+    <p style="opacity:.85;">Five quick details. We&rsquo;ll check availability and get back to you.</p>
+    <form class="lead-form" action="https://formspree.io/f/moeanwgk" method="POST">
+      <input type="hidden" name="_subject" value="Micro wedding inquiry - landing page">
+      <input type="hidden" name="_next" value="https://bloomscapeevents.com/thank-you.html">
+      <input type="hidden" name="event_type" value="Micro Wedding">
+      <div><label for="f-name">Name</label><input id="f-name" type="text" name="name" autocomplete="name" required></div>
+      <div><label for="f-contact">Phone or email</label><input id="f-contact" type="text" name="contact" autocomplete="email" inputmode="email" placeholder="(704) 000-0000 or you@email.com" required></div>
+      <div><label for="f-date">Wedding date</label><input id="f-date" type="date" name="event_date" required></div>
+      <div><label for="f-venue">Venue or city</label><input id="f-venue" type="text" name="venue" placeholder="Venue name or city" required></div>
+      <div><label for="f-guests">Number of guests</label>
+        <select id="f-guests" name="guest_count" required>
+          <option value="" disabled selected>Select</option>
+          <option>Up to 10</option>
+          <option>11&ndash;20</option>
+          <option>21&ndash;30</option>
+          <option>31&ndash;50</option>
+          <option>More than 50</option>
+        </select>
+      </div>
+      <button type="submit">Check my date</button>
+    </form>
   </div>
 </section>
 <section>
@@ -93,13 +221,14 @@ fbq('track', 'PageView');</script>
     <h2>Micro wedding decor, answered</h2>
     <div class="faq-item"><h3>How many guests is a micro wedding?</h3><p>Most micro weddings run under 50 guests, and many are 10&ndash;25. Our styling scales to fit an intimate ceremony without losing the impact of a larger celebration.</p></div>
     <div class="faq-item"><h3>Is decor for a smaller wedding less of an investment?</h3><p>Yes &mdash; our Micro Wedding Styling Package starts at $1,999 for guest counts around 20, with a Full Bloom option at $3,500 for a more complete reception build-out. Both are designed specifically for this scale, not scaled down from a larger package.</p></div>
+    <div class="faq-item"><h3>Do you require a deposit?</h3><p>Yes. A signed agreement and a non-refundable retainer are required to reserve your event date.</p></div>
     <div class="faq-item"><h3>How far in advance should I book?</h3><p>We recommend 2&ndash;6 months out for a micro wedding, though we can often accommodate shorter timelines depending on the season.</p></div>
     <div class="faq-item"><h3>Do you travel to backyards or private homes?</h3><p>Yes &mdash; micro weddings often happen outside traditional venues, and we regularly set up in backyards, private estates, and small event spaces throughout Charlotte.</p></div>
   </div>
 </section>
 <div class="hero-simple" style="padding:4rem 1.5rem;">
   <h2 style="margin-bottom:1rem;">Let's design your micro wedding</h2>
-  <a href="/index.html#contact" class="btn-primary">Start the Conversation</a>
+  <a href="#check-date" class="btn-primary">Check my date</a>
 </div>
 <footer>
   <div>
@@ -112,14 +241,25 @@ fbq('track', 'PageView');</script>
     <a href="/index.html#portfolio">Portfolio</a>
     <a href="/index.html#investment">Pricing</a>
     <a href="/blog/">Blog</a>
-    <a href="/index.html#contact">Book Now</a>
+    <a href="#check-date">Check my date</a>
   </div>
   <div>
     <h4>Connect</h4>
-    <a href="https://instagram.com/bloomscape_events" target="_blank">Instagram</a>
-    <a href="https://tiktok.com/@bloomscape_events" target="_blank">TikTok</a>
+    <a href="https://instagram.com/bloomscape_events" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://tiktok.com/@bloomscape_events" target="_blank" rel="noopener">TikTok</a>
     <a href="mailto:hello@bloomscapeevents.com">hello@bloomscapeevents.com</a>
   </div>
 </footer>
+<a href="#check-date" class="sticky-cta" id="stickyCta">Check my date</a>
+<script>
+(function(){
+  var d=document.getElementById('f-date');
+  if(d){var t=new Date();t.setMinutes(t.getMinutes()-t.getTimezoneOffset());d.min=t.toISOString().slice(0,10);}
+  var bar=document.getElementById('stickyCta'),form=document.getElementById('check-date');
+  if(bar&&form&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(e){bar.classList.toggle('hide',e[0].isIntersecting);},{threshold:0.35}).observe(form);
+  }
+})();
+</script>
 </body>
 </html>
